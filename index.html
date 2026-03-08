@@ -1289,8 +1289,9 @@
       <h2 class="reveal">Stop letting decisions disappear.</h2>
       <p class="reveal reveal-delay-1">MemoryMeet launches soon. Join the waitlist today and be the first to access the product — at founding member pricing, locked in for life.</p>
       <div class="cta-form reveal reveal-delay-2">
-        <input type="email" placeholder="your@email.com">
-        <button class="btn-teal">Get early access →</button>
+        <a href="https://airtable.com/appntJx1gNsWGAXuO/shrMk0uls2yy8g91y" target="_blank" class="btn-teal">
+          Get early access →
+        </a>
       </div>
       <p class="cta-sub reveal reveal-delay-3">No spam. No credit card. Unsubscribe anytime. 240+ already waiting.</p>
     </div>
@@ -1406,27 +1407,6 @@
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
-
-  // CTA form
-  const form = document.querySelector('.cta-form');
-  const input = form.querySelector('input');
-  const btn = form.querySelector('button');
-  btn.addEventListener('click', () => {
-    if (input.value.includes('@')) {
-      btn.textContent = '✓ You\'re on the list!';
-      btn.style.background = 'var(--green)';
-      input.value = '';
-      input.placeholder = 'See you at launch!';
-      input.disabled = true;
-      btn.disabled = true;
-    } else {
-      input.style.borderColor = '#e05555';
-      input.placeholder = 'Enter a valid email';
-      input.value = '';
-      setTimeout(() => { input.style.borderColor = ''; }, 2000);
-    }
-  });
-  input.addEventListener('keydown', e => { if (e.key === 'Enter') btn.click(); });
 
   // Smooth CTA scroll for nav join button
   document.querySelectorAll('a[href="#cta"]').forEach(a => {
